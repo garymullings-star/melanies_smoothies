@@ -5,11 +5,10 @@ markdown-it-py==2.2.0
 pygments==2.20.0
 mdurl==0.1.2
 snowflake-snowpark-python
-
 streamlit
 
 
-#snowflake-snowpark-python=streamlit
+
 
 
 
