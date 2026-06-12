@@ -27,7 +27,7 @@ st.write('The name on your Smoothie will be', title)
 
 
 connection_parameters = {
-account = "ODEUAMO-YKB64805"
+"account" = "ODEUAMO-YKB64805"
 user = "sgnillumg"
 password = "SnowSwagg42!!!"
 role = "SYSADMIN"
