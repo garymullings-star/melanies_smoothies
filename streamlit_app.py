@@ -39,6 +39,14 @@ connection_parameters = st.secrets["snowflake"]
 # }
 
 session = Session.builder.configs(connection_parameters).create()
+
+# ✅ Health check query
+try:
+    result = session.sql("SELECT CURRENT_DATE").collect()
+    st.success(f"Snowflake connection OK. Current date: {result[0][0]}")
+except Exception as e:
+    st.error(f"Snowflake connection failed: {e}")
+  
 my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
 st.dataframe(data=my_dataframe, use_container_width=True)
 
