@@ -36,6 +36,7 @@ connection_parameters = {
     "schema": "<your_schema>"
 }
 
+session = Session.builder.configs(connection_parameters).create()
 my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
 st.dataframe(data=my_dataframe, use_container_width=True)
 
