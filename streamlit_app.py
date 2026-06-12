@@ -25,7 +25,16 @@ st.write('The name on your Smoothie will be', title)
 # st.write('You selected:', option)
 
 
-session = get_active_session()
+connection_parameters = {
+    "account": "<your_account>",
+    "user": "<your_username>",
+    "password": "<your_password>",
+    "role": "<your_role>",
+    "warehouse": "<your_warehouse>",
+    "database": "<your_database>",
+    "schema": "<your_schema>"
+}
+
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 # st.dataframe(data=my_dataframe, use_container_width=True)
 
