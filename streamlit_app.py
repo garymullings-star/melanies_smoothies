@@ -27,13 +27,14 @@ st.write('The name on your Smoothie will be', title)
 
 
 connection_parameters = {
-    "account": "<your_account>",
-    "user": "<your_username>",
-    "password": "<your_password>",
-    "role": "<your_role>",
-    "warehouse": "<your_warehouse>",
-    "database": "<your_database>",
-    "schema": "<your_schema>"
+account = "ODEUAMO-YKB64805"
+user = "sgnillumg"
+password = "SnowSwagg42!!!"
+role = "SYSADMIN"
+warehouse = "COMPUTE_WH"
+database = "SMOOTHIES"
+schema = "PUBLIC"
+client_session_keep_alive = true
 }
 
 session = Session.builder.configs(connection_parameters).create()
