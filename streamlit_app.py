@@ -87,31 +87,14 @@ if ingredients_list:
 import requests
 
 # Call the API
-#1 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
 #data = st.text(smoothieroot_response.json())
-#2 data = smoothieroot_response.json()
+data = smoothieroot_response.json()
 # 3 sf_df = st.dataframe(data, use_container_width=True)
 # Convert JSON into a DataFrame
 #data = smoothieroot_response.text
 #df = pd.DataFrame([data]) if isinstance(data, dict) else pd.DataFrame(data)
 
-if smoothiefroot_response.status_code == 200:
-    try:
-        # Safely parse JSON
-        data = smoothiefroot_response.json()
 
-        # Convert JSON into a DataFrame
-        if isinstance(data, dict):
-            df = pd.DataFrame([data])   # wrap dict in a list
-        else:
-            df = pd.DataFrame(data)     # assume list of dicts
-
-        # Display in Streamlit
-        st.dataframe(df, use_container_width=True)
-    except ValueError:
-        st.error("Response was not valid JSON.")
-        st.text(smoothiefroot_response.text)  # show raw response for debugging
-else:
-    st.error(f"API request failed with status code {smoothiefroot_response.status_code}")
 
 
