@@ -88,7 +88,8 @@ import requests
 
 # Call the API
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
-data = st.text(smoothieroot_response.json())
+#data = st.text(smoothieroot_response.json())
+data = smoothieroot_response.json()
 sf_df = st.dataframe(data, use_container_width=True)
 # Convert JSON into a DataFrame
 #data = smoothieroot_response.text
