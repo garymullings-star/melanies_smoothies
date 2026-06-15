@@ -84,12 +84,13 @@ if ingredients_list:
       
 #new section to display smoothiefront nutrition info
 
-import requests  
+import requests
+data = smoothieroot_response.json()
 # Call the API
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
 # st.text(smoothieroot_response.json())
 #sf_df = st.dataframe(data=smoothieroot_response.json(), use_container_width=True)
 # Convert JSON into a DataFrame
-df = pd.DataFrame(data=smoothieroot_response.json()) if isinstance(data, dict) else pd.DataFrame(data)
+df = pd.DataFrame([data]) if isinstance(data, dict) else pd.DataFrame(data)
 
 
