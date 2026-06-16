@@ -92,7 +92,7 @@ st.text(smoothiefroot_response.json())
 # 3 sf_df = st.dataframe(data, use_container_width=True)
 # Convert JSON into a DataFrame
 #data = smoothieroot_response.text
-df = st.dataFrame(data=smoothiefroot_response.json(), use_container_width=True
+df = st.dataFrame(data=smoothiefroot_response.json(), use_container_width=True)
 
 
 
