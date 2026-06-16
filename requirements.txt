@@ -9,6 +9,7 @@ protobuf==4.25.3
 
 streamlit
 requests
+pandas
 
 
 
