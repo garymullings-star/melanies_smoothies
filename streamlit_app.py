@@ -48,8 +48,8 @@ try:
 except Exception as e:
     st.error(f"Snowflake connection failed: {e}")
   
-my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
-st.dataframe(data=my_dataframe, use_container_width=True)
+#my_dataframe = session.table("SMOOTHIES.PUBLIC.FRUIT_OPTIONS").select(col('FRUIT_NAME'))
+#st.dataframe(data=my_dataframe, use_container_width=True)
 
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients:',
