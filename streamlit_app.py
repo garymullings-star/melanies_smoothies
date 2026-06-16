@@ -4,6 +4,7 @@ from snowflake.snowpark.functions import col
 from snowflake.snowpark import Session
 from snowflake.snowpark.context import get_active_session
 import pandas as pd
+import requests
 
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
@@ -64,6 +65,8 @@ if ingredients_list:
    #name_string = ''
     for fruit_chosen in ingredients_list:
         ingredients_string += fruit_chosen + ' '
+        smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+        df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
     #st.write(ingredients_string)
 
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order
@@ -84,11 +87,11 @@ if ingredients_list:
       
 #new section to display smoothiefront nutrition info
 
-import requests
+
 # Call the API
-smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
+#smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")  
 #st.text(smoothiefroot_response.json())
-df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+#df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
 
 
